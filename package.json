@@ -1,0 +1,1 @@
+{"name":"walmart-display-studio","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test test.mjs phase2.test.mjs reference.test.mjs phase3.test.mjs phase3-scene.test.mjs economics.test.mjs assignment-fix.test.mjs assignment-render.test.mjs"}}

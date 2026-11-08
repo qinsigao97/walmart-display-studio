@@ -1,0 +1,24 @@
+# Private local state and credentials
+.git/
+.openai/
+.sites-local/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Project backups and private user assets
+qa/
+private/
+backups/
+node_modules/
+package/
+*.tgz
+*.zip
+display-studio-project*.json
+user-project*.json
+*.csv
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
