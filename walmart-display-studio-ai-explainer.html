@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Walmart Display Studio 2.0 | AI Project Explainer</title>
+<style>
+:root{color-scheme:light;--ink:#142840;--muted:#455a71;--blue:#0056b3;--line:#d7e2ee;--paper:#f1f6fc;--night:#102844}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 system-ui,sans-serif}h1,h2,h3,p{margin:0 0 .75rem}h1,h2,h3{line-height:1.15;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5rem);max-width:13ch}h2{font-size:clamp(1.65rem,4vw,2.25rem)}h3{font-size:1.15rem}a{color:var(--blue);text-underline-offset:.2em}a:hover{text-decoration-thickness:.15em}:focus-visible{outline:3px solid #0062c6;outline-offset:4px}header a:focus-visible{outline-color:#ffdc80}.wrap{width:min(68rem,calc(100% - 2rem));margin:auto}.hero{background:var(--night);color:white;padding:clamp(2.5rem,7vw,5rem) 0}.hero p{max-width:60ch;color:#dbeaff}.hero a{color:#ffdc80}.kicker{font-weight:750;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em}.hero .kicker{color:#ffdc80}.nav{background:white;border-bottom:1px solid var(--line)}.nav ul{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;list-style:none;margin:0;padding:.8rem 0}.nav a{display:inline-block;padding:.15rem 0;font-weight:650}main{padding:2rem 0}section{background:white;border:1px solid var(--line);border-radius:1rem;padding:clamp(1rem,4vw,2.25rem);margin-bottom:1.25rem}section>.kicker{color:var(--blue)}.grid,.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.85rem}.flow{list-style:none;padding:0;counter-reset:step}.flow li,.card,.result{background:var(--paper);border-radius:.65rem;padding:1rem}.flow li::before{counter-increment:step;content:"0" counter(step);display:block;color:var(--blue);font-weight:800}.flow strong{display:block}.note{color:var(--muted)}.phases{padding-left:1.3rem}.phases li{padding:.3rem 0}details{border-top:1px solid var(--line);padding:.8rem 0}summary{cursor:pointer;font-weight:750}details p{margin:.65rem 0 0}.calc{border:1px solid var(--line);border-radius:.65rem;padding:1rem;margin:1rem 0}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.8rem}label{display:grid;gap:.25rem;font-weight:650}input,button{font:inherit;border-radius:.35rem}input{width:100%;padding:.45rem;border:1px solid #8297ae;color:var(--ink);background:white}button{margin:.85rem 0;padding:.45rem .9rem;background:var(--blue);color:white;border:0;cursor:pointer;font-weight:700}.result{display:block;font-variant-numeric:tabular-nums}.skip{position:absolute;left:1rem;top:.5rem;background:white;padding:.5rem;transform:translateY(-200%)}.skip:focus{transform:none}footer{padding:0 0 2rem;color:var(--muted)}
+@media print{body,.hero,.card,.flow li,.result{background:white;color:black}.hero{padding:0}.hero p,.hero .kicker,.hero a{color:black}.nav,.skip,button{display:none}section{break-inside:avoid}.wrap{width:100%}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hero"><div class="wrap">
+<p class="kicker">Semester project · AI development explainer</p>
+<h1>Walmart Display Studio 2.0</h1>
+<p>A browser prototype for planning retail displays, checking SKU fit, and estimating margins before assembling a buyer presentation.</p>
+<a href="https://github.com/qinsigao97/walmart-display-studio">View source code and run instructions on GitHub</a>
+</div></header>
+<nav class="nav" aria-label="Page sections"><div class="wrap"><ul>
+<li><a href="#workflow">Workflow</a></li><li><a href="#ai">AI methods</a></li><li><a href="#changes">Changelog</a></li><li><a href="#demo">IMU demo</a></li><li><a href="#evidence">Testing and reflection</a></li>
+</ul></div></nav>
+<main class="wrap" id="main">
+<section id="workflow">
+<p class="kicker">01 · Problem and workflow</p>
+<h2>From retail brief to buyer review</h2>
+<p>In my current workflow, an overseas art team assigns and prepares the display request across a 14-hour time difference. Sourcing builds the pricing structure in Excel. I then gather both pieces into a presentation. I chose this project because a first-pass layout and cost estimate would help me move that daily work forward while specialist reviews are pending.</p>
+<ol class="flow">
+<li><strong>Set up the display</strong>Choose a format, enter dimensions, and add SKU photos or supported 3D models.</li>
+<li><strong>Check fit and appearance</strong>Assign merchandise to a face, shelf, tray, or compartment. Review placed quantities and switch camera views.</li>
+<li><strong>Review costs and share</strong>Enter costs and assumed retail. Review margin internally and export a buyer HTML report or PNG for a valid layout.</li>
+</ol>
+</section>
+<section id="ai">
+<p class="kicker">02 · AI integration</p>
+<h2>What AI did during development</h2>
+<div class="grid">
+<div class="card"><h3>My role</h3><p>I identified the workflow, supplied references and merchandise examples, defined what each phase needed to do, and checked the results against realistic tasks.</p></div>
+<div class="card"><h3>ChatGPT and Codex</h3><p>I used conversational AI to refine the idea and plan phased releases. I used Codex to implement features, create regression tests, and investigate failures from screenshots and written reproduction steps.</p></div>
+<div class="card"><h3>What runs in the browser</h3><p>JavaScript applies dimension, allocation, and pricing rules. Three.js renders the scene. Uploading a photo does not call an AI model or automatically reconstruct a complete 3D product.</p></div>
+</div>
+</section>
+<section id="changes">
+<p class="kicker">03 · Feature changelog</p>
+<h2>How the prototype evolved</h2>
+<ol class="phases">
+<li><strong>Initial build:</strong> Established half-pallet and high-back tray layouts, dimension checks, photo uploads, and front and isometric previews.</li>
+<li><strong>Phase 2 and realism pass:</strong> Refined merchandise and display visuals with modeled forms where available and photo cutouts for supported image workflows.</li>
+<li><strong>Phase 3:</strong> Expanded to nine display formats with slot-level SKU allocation, fit checks, and buyer-facing outputs.</li>
+<li><strong>Phase 3.1:</strong> Added First Cost, landed cost, assumed MSRP, unit and display IMU, and a separate confidential economics CSV.</li>
+<li><strong>Pallet SKU fix:</strong> Full Pallet Shelf and Stacking Trays now show valid placements even when another SKU fails a fit check. The affected row explains the limit, and <em>Show in 3D</em> can point to the assigned face or tray. Final layout exports still require a valid plan.</li>
+</ol>
+</section>
+<section id="demo">
+<p class="kicker">04 · Interactive explainer</p>
+<h2>How cost inputs change IMU</h2>
+<p>Initial markup (IMU) is the difference between assumed retail and the chosen cost basis, expressed as a share of retail. Landed cost adds entered logistics or other costs to First Cost. The studio calculates display IMU from total retail and cost dollars for units actually placed; averaging SKU percentages can give a different result.</p>
+<form class="calc" id="calculator">
+<p id="example-note">Try these synthetic USD values for one SKU. Enter zero if there are no additional costs.</p>
+<div class="fields">
+<label for="first">First Cost ($)<input id="first" name="first" type="number" min="0" step="any" required value="2.00"></label>
+<label for="extra">Additional cost ($)<input id="extra" name="extra" type="number" min="0" step="any" required value="0.35"></label>
+<label for="retail">Assumed retail ($)<input id="retail" name="retail" type="number" min="0.01" step="any" required value="4.97"></label>
+</div>
+<button type="submit" aria-describedby="example-note">Calculate IMU</button>
+<output class="result" id="imu-output" for="first extra retail" aria-live="polite">Landed cost: $2.35 · First Cost IMU: 59.76% · Landed IMU: 52.72%</output>
+<noscript><p>Enable JavaScript to recalculate this example.</p></noscript>
+</form>
+<details><summary>See the formulas</summary>
+<p>Landed cost = First Cost + additional cost. Unit IMU = (assumed unit retail − selected unit cost) ÷ assumed unit retail × 100. Display IMU uses the same formula with total retail and total cost, each summed using actual placed quantities.</p>
+</details>
+<details><summary>What appears in each export?</summary>
+<p>The buyer HTML can show assumed MSRP and excludes internal costs and profitability. PNG captures the 3D view. The explicitly requested economics CSV and project JSON can contain internal pricing. Uploaded project data is stored locally in the browser.</p>
+</details>
+</section>
+<section id="evidence">
+<p class="kicker">05 · Evidence and reflection</p>
+<h2>What testing taught me</h2>
+<p>AI suggested building in phases and testing each one before moving on. I asked for an initial batch of 50 test cases and learned that passing automated checks did not guarantee that my own product uploads and SKU assignments would work. When products disappeared, I took screenshots and described where the expected merchandise was missing.</p>
+<p>On the two pallet formats, one invalid placement could blank an otherwise usable preview. The repair preserved valid placements and exposed the fit reason where I was editing. Both formats were retested by switching between actual uploaded SKUs. The documented repository snapshot has 68 passing automated tests, including checks for allocation, economics, export privacy, and the pallet regression.</p>
+<p><strong>My next testing rule:</strong> End every phase with a complete workflow using representative merchandise: upload, assign, check fit in 3D, review economics, then export. Use the result to add regression cases that synthetic inputs missed.</p>
+<details><summary>Optional video walkthrough</summary>
+<p>Open with the art-and-sourcing handoff. Show a SKU assignment and its 3D placement, then change an entered cost and point out the IMU update. Re-create a fit warning so viewers can see that valid merchandise remains visible. Close with the lesson about testing the whole workflow with real inputs.</p>
+</details>
+<p><a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PALLET-ASSIGNMENT-FIX.md">Pallet repair evidence</a> · <a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PHASE31-REPORT.md">Economics validation report</a></p>
+</section>
+<section id="limits">
+<p class="kicker">06 · Scope</p>
+<h2>What the prototype can support</h2>
+<p>Use it to review a buyer concept and compare assumptions. Fit checks use entered dimensions and clearances; they do not certify structural safety, manufacturing readiness, or retailer compliance. MSRP-based IMU is an estimate in USD. The prototype does not verify actual retailer costs or selling prices.</p>
+</section>
+</main>
+<footer class="wrap">Independent course prototype. No affiliation with or endorsement by Walmart.</footer>
+<script>
+"use strict";
+const form = document.getElementById("calculator");
+const result = document.getElementById("imu-output");
+const money = new Intl.NumberFormat("en-US", {style:"currency", currency:"USD"});
+form.addEventListener("input", () => { result.textContent = "Select Calculate IMU to update the example."; });
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  const [first, extra, retail] = ["first","extra","retail"].map(id => document.getElementById(id).valueAsNumber);
+  const landed = first + extra;
+  const margin = cost => (retail - cost) / retail * 100;
+  if (![landed, margin(first), margin(landed)].every(Number.isFinite)) {
+    result.textContent = "These values exceed the calculator range. Enter smaller amounts.";
+    return;
+  }
+  result.textContent = "Landed cost: " + money.format(landed) +
+    " · First Cost IMU: " + margin(first).toFixed(2) + "%" +
+    " · Landed IMU: " + margin(landed).toFixed(2) + "%";
+});
+</script>
+</body>
+</html>
+
