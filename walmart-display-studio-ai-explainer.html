@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Walmart Display Studio 2.0 | AI Project Explainer</title>
 <style>
-:root{color-scheme:light;--ink:#142840;--muted:#455a71;--blue:#0056b3;--line:#d7e2ee;--paper:#f1f6fc;--night:#102844}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 system-ui,sans-serif}h1,h2,h3,p{margin:0 0 .75rem}h1,h2,h3{line-height:1.15;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5rem);max-width:13ch}h2{font-size:clamp(1.65rem,4vw,2.25rem)}h3{font-size:1.15rem}a{color:var(--blue);text-underline-offset:.2em}a:hover{text-decoration-thickness:.15em}:focus-visible{outline:3px solid #0062c6;outline-offset:4px}header a:focus-visible{outline-color:#ffdc80}.wrap{width:min(68rem,calc(100% - 2rem));margin:auto}.hero{background:var(--night);color:white;padding:clamp(2.5rem,7vw,5rem) 0}.hero p{max-width:60ch;color:#dbeaff}.hero a{color:#ffdc80}.kicker{font-weight:750;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em}.hero .kicker{color:#ffdc80}.nav{background:white;border-bottom:1px solid var(--line)}.nav ul{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;list-style:none;margin:0;padding:.8rem 0}.nav a{display:inline-block;padding:.15rem 0;font-weight:650}main{padding:2rem 0}section{background:white;border:1px solid var(--line);border-radius:1rem;padding:clamp(1rem,4vw,2.25rem);margin-bottom:1.25rem}section>.kicker{color:var(--blue)}.grid,.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.85rem}.flow{list-style:none;padding:0;counter-reset:step}.flow li,.card,.result{background:var(--paper);border-radius:.65rem;padding:1rem}.flow li::before{counter-increment:step;content:"0" counter(step);display:block;color:var(--blue);font-weight:800}.flow strong{display:block}.note{color:var(--muted)}.phases{padding-left:1.3rem}.phases li{padding:.3rem 0}details{border-top:1px solid var(--line);padding:.8rem 0}summary{cursor:pointer;font-weight:750}details p{margin:.65rem 0 0}.calc{border:1px solid var(--line);border-radius:.65rem;padding:1rem;margin:1rem 0}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.8rem}label{display:grid;gap:.25rem;font-weight:650}input,button{font:inherit;border-radius:.35rem}input{width:100%;padding:.45rem;border:1px solid #8297ae;color:var(--ink);background:white}button{margin:.85rem 0;padding:.45rem .9rem;background:var(--blue);color:white;border:0;cursor:pointer;font-weight:700}.result{display:block;font-variant-numeric:tabular-nums}.skip{position:absolute;left:1rem;top:.5rem;background:white;padding:.5rem;transform:translateY(-200%)}.skip:focus{transform:none}footer{padding:0 0 2rem;color:var(--muted)}
+.changes dd{margin:0 0 .8rem;color:var(--muted)}
+:root{color-scheme:light;--ink:#182d45;--muted:#455a71;--blue:#005aa6;--line:#dce2e9;--paper:#f4f6f8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 "DM Sans",Arial,sans-serif}h1,h2,h3,p{margin:0 0 .75rem}h1,h2,h3{line-height:1.15;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5rem);max-width:13ch}h2{font-size:clamp(1.65rem,4vw,2.25rem)}h3{font-size:1.15rem}a{color:var(--blue);text-underline-offset:.2em}a:hover{text-decoration-thickness:.15em}:focus-visible{outline:3px solid #0062c6;outline-offset:4px}header a:focus-visible{outline-color:#0071ce}.wrap{width:min(68rem,calc(100% - 2rem));margin:auto}.hero{background:white;border-top:5px solid #0071ce;color:var(--ink);padding:clamp(2.5rem,7vw,5rem) 0}.hero p{max-width:65ch;color:var(--muted)}.hero a{color:var(--blue)}.kicker{font-weight:750;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em}.hero .kicker{color:var(--blue)}.nav{background:white;border-bottom:1px solid var(--line)}.nav ul{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;list-style:none;margin:0;padding:.8rem 0}.nav a{display:inline-block;padding:.15rem 0;font-weight:650}main{padding:2rem 0}section{background:white;border:1px solid var(--line);border-radius:1rem;padding:clamp(1rem,4vw,2.25rem);margin-bottom:1.25rem}section>.kicker{color:var(--blue)}.grid,.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.85rem}.flow{list-style:none;padding:0;counter-reset:step}.flow li,.card,.result{background:var(--paper);border-radius:.65rem;padding:1rem}.flow li::before{counter-increment:step;content:"0" counter(step);display:block;color:var(--blue);font-weight:800}.flow strong{display:block}.note{color:var(--muted)}.phases{padding-left:1.3rem}.phases li{padding:.3rem 0}details{border-top:1px solid var(--line);padding:.8rem 0}summary{cursor:pointer;font-weight:750}details p{margin:.65rem 0 0}.calc{border:1px solid var(--line);border-radius:.65rem;padding:1rem;margin:1rem 0}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.8rem}label{display:grid;gap:.25rem;font-weight:650}input,button{font:inherit;border-radius:.35rem}input{width:100%;padding:.45rem;border:1px solid #8297ae;color:var(--ink);background:white}button{margin:.85rem 0;padding:.45rem .9rem;background:var(--blue);color:white;border:0;cursor:pointer;font-weight:700}.result{display:block;font-variant-numeric:tabular-nums}.skip{position:absolute;left:1rem;top:.5rem;background:white;padding:.5rem;transform:translateY(-200%)}.skip:focus{transform:none}footer{padding:0 0 2rem;color:var(--muted)}
 @media print{body,.hero,.card,.flow li,.result{background:white;color:black}.hero{padding:0}.hero p,.hero .kicker,.hero a{color:black}.nav,.skip,button{display:none}section{break-inside:avoid}.wrap{width:100%}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hero"><div class="wrap">
-<p class="kicker">Semester project · AI development explainer</p>
+<p class="kicker">Course project handoff · Phase 3.1 with pallet SKU fix</p>
 <h1>Walmart Display Studio 2.0</h1>
-<p>A browser prototype for planning retail displays, checking SKU fit, and estimating margins before assembling a buyer presentation.</p>
+<p>A handoff for a retail merchandising teammate preparing a first-pass display concept. Use the prototype to decide which layout to take forward, which items fit, and what assumptions to review with sourcing before a buyer presentation.</p>
 <a href="https://github.com/qinsigao97/walmart-display-studio">View source code and run instructions on GitHub</a>
 </div></header>
 <nav class="nav" aria-label="Page sections"><div class="wrap"><ul>
-<li><a href="#workflow">Workflow</a></li><li><a href="#ai">AI methods</a></li><li><a href="#changes">Changelog</a></li><li><a href="#demo">IMU demo</a></li><li><a href="#evidence">Testing and reflection</a></li>
+<li><a href="#workflow">Workflow</a></li><li><a href="#limits">Status and next steps</a></li><li><a href="#ai">AI methods</a></li><li><a href="#changes">Changelog</a></li><li><a href="#demo">IMU demo</a></li><li><a href="#evidence">Testing and reflection</a></li>
 </ul></div></nav>
 <main class="wrap" id="main">
 <section id="workflow">
-<p class="kicker">01 · Problem and workflow</p>
 <h2>From retail brief to buyer review</h2>
 <p>In my current workflow, an overseas art team assigns and prepares the display request across a 14-hour time difference. Sourcing builds the pricing structure in Excel. I then gather both pieces into a presentation. I chose this project because a first-pass layout and cost estimate would help me move that daily work forward while specialist reviews are pending.</p>
 <ol class="flow">
@@ -31,9 +31,11 @@
 <li><strong>Check fit and appearance</strong>Assign merchandise to a face, shelf, tray, or compartment. Review placed quantities and switch camera views.</li>
 <li><strong>Review costs and share</strong>Enter costs and assumed retail. Review margin internally and export a buyer HTML report or PNG for a valid layout.</li>
 </ol>
+<details><summary>Read the same workflow as a text summary</summary>
+<p>Choose a display format, enter dimensions, and add SKU photos or supported 3D models. Assign merchandise to a face, shelf, tray, or compartment, review placed quantities, and switch camera views. Enter costs and assumed retail, review margin internally, and export a buyer HTML report or PNG once the layout is valid.</p>
+</details>
 </section>
 <section id="ai">
-<p class="kicker">02 · AI integration</p>
 <h2>What AI did during development</h2>
 <div class="grid">
 <div class="card"><h3>My role</h3><p>I identified the workflow, supplied references and merchandise examples, defined what each phase needed to do, and checked the results against realistic tasks.</p></div>
@@ -42,18 +44,24 @@
 </div>
 </section>
 <section id="changes">
-<p class="kicker">03 · Feature changelog</p>
 <h2>How the prototype evolved</h2>
-<ol class="phases">
-<li><strong>Initial build:</strong> Established half-pallet and high-back tray layouts, dimension checks, photo uploads, and front and isometric previews.</li>
-<li><strong>Phase 2 and realism pass:</strong> Refined merchandise and display visuals with modeled forms where available and photo cutouts for supported image workflows.</li>
-<li><strong>Phase 3:</strong> Expanded to nine display formats with slot-level SKU allocation, fit checks, and buyer-facing outputs.</li>
-<li><strong>Phase 3.1:</strong> Added First Cost, landed cost, assumed MSRP, unit and display IMU, and a separate confidential economics CSV.</li>
-<li><strong>Pallet SKU fix:</strong> Full Pallet Shelf and Stacking Trays now show valid placements even when another SKU fails a fit check. The affected row explains the limit, and <em>Show in 3D</em> can point to the assigned face or tray. Final layout exports still require a valid plan.</li>
-</ol>
+<dl class="changes">
+<dt><strong>Added · Phase 3</strong></dt>
+<dd>Nine display formats, slot-level SKU allocation, and buyer outputs. <a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PHASE3-REPORT.md">Phase 3 report</a></dd>
+<dt><strong>Added · Phase 3.1</strong></dt>
+<dd>First Cost, landed cost, assumed MSRP, unit and display IMU, and a confidential economics CSV. <a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PHASE31-REPORT.md">Economics report</a></dd>
+<dt><strong>Improved · Realism update</strong></dt>
+<dd>Refined merchandise previews using modeled forms and supported photo cutouts. <a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/REALISM-UPDATE.md">Realism update</a></dd>
+<dt><strong>Fixed · November 8, 2026</strong></dt>
+<dd>Full Pallet Shelf and Stacking Trays retain valid placements when another SKU fails a fit check. The affected row gives the fit reason. <em>Show in 3D</em> points to the assigned face or tray. <a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PALLET-ASSIGNMENT-FIX.md">Pallet repair report</a></dd>
+<dt><strong>Known issues · Phase 3.1 with pallet fix</strong></dt>
+<dd>Estimates use entered dimensions and assumed retail. Photo cutouts have limited depth, and browser-local storage requires backups.</dd>
+</dl>
+<details><summary>Repeatable changelog update prompt</summary>
+<p>Review Git history and dated test reports since the last handoff. Draft entries under Added, Improved, Fixed, and Known issues. Include dates, versions, or commits when available. Link each claim to evidence and flag anything that still needs to be checked against the running app.</p>
+</details>
 </section>
 <section id="demo">
-<p class="kicker">04 · Interactive explainer</p>
 <h2>How cost inputs change IMU</h2>
 <p>Initial markup (IMU) is the difference between assumed retail and the chosen cost basis, expressed as a share of retail. Landed cost adds entered logistics or other costs to First Cost. The studio calculates display IMU from total retail and cost dollars for units actually placed; averaging SKU percentages can give a different result.</p>
 <form class="calc" id="calculator">
@@ -75,8 +83,11 @@
 </details>
 </section>
 <section id="evidence">
-<p class="kicker">05 · Evidence and reflection</p>
 <h2>What testing taught me</h2>
+<details><summary>Compare the two documented test workflows</summary>
+<p><strong>Pallet SKU allocation.</strong> In the repaired local browser build, switch between uploaded SKUs on Full Pallet Shelf and Stacking Trays. The browser check found that assigned merchandise and counts updated. The stacking tray showed six units of SKU-3 and nine of SKU-2. The repair report records the original blank-preview failure, fit limits, and export retest.</p>
+<p><strong>Mixed-SKU economics.</strong> In the Phase 3.1 local browser build, apply the synthetic three-SKU catalog and review the landed-cost basis. The verified 20-unit example showed $93.70 retail, $35.50 landed cost, and 62.11% weighted IMU. The economics report records the inputs, comparison calculations, and export checks.</p>
+</details>
 <p>AI suggested building in phases and testing each one before moving on. I asked for an initial batch of 50 test cases and learned that passing automated checks did not guarantee that my own product uploads and SKU assignments would work. When products disappeared, I took screenshots and described where the expected merchandise was missing.</p>
 <p>On the two pallet formats, one invalid placement could blank an otherwise usable preview. The repair preserved valid placements and exposed the fit reason where I was editing. Both formats were retested by switching between actual uploaded SKUs. The documented repository snapshot has 68 passing automated tests, including checks for allocation, economics, export privacy, and the pallet regression.</p>
 <p><strong>My next testing rule:</strong> End every phase with a complete workflow using representative merchandise: upload, assign, check fit in 3D, review economics, then export. Use the result to add regression cases that synthetic inputs missed.</p>
@@ -86,9 +97,10 @@
 <p><a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PALLET-ASSIGNMENT-FIX.md">Pallet repair evidence</a> · <a href="https://github.com/qinsigao97/walmart-display-studio/blob/main/PHASE31-REPORT.md">Economics validation report</a></p>
 </section>
 <section id="limits">
-<p class="kicker">06 · Scope</p>
-<h2>What the prototype can support</h2>
+<h2>Current status, limits, and next steps</h2>
+<p><strong>Available now:</strong> Nine display formats, SKU placement and fit checks, 3D previews, local economics, and buyer exports. The public repository contains the runnable Phase 3.1 snapshot with the pallet SKU fix.</p>
 <p>Use it to review a buyer concept and compare assumptions. Fit checks use entered dimensions and clearances; they do not certify structural safety, manufacturing readiness, or retailer compliance. MSRP-based IMU is an estimate in USD. The prototype does not verify actual retailer costs or selling prices.</p>
+<p><strong>Proposed next step:</strong> Have a merchandising teammate follow the workflow with a representative sample catalog. Record unclear steps, check the buyer output, and add regression tests for any new failures.</p>
 </section>
 </main>
 <footer class="wrap">Independent course prototype. No affiliation with or endorsement by Walmart.</footer>
@@ -114,4 +126,5 @@ form.addEventListener("submit", event => {
 </script>
 </body>
 </html>
+
 
